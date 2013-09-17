@@ -39,7 +39,11 @@
     </nav>
     <div class="row">
       <div class="large-8 large-offset-2 columns">
-        <%= display_flash_messages %>
+        <% flash.each do |name, msg| %>
+        <%= content_tag :div, data: {alert: ""}, class: "alert-box #{name}" do %>
+        <%= msg %>
+        <% end %>
+        <% end %>
         <%= yield %>
       </div>
     </div>
