@@ -27,6 +27,7 @@ gem 'zurb-foundation'
 gem 'compass-rails'
 gem 'simple_form'
 gem 'devise'
+gem 'acts_as_commentable'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'

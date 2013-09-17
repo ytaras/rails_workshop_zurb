@@ -10,3 +10,18 @@
 
 <%= link_to 'Edit', edit_post_path(@post), class: 'button secondary' %>
 <%= link_to 'Back', posts_path, class: 'button secondary' %>
+
+<%= div_for @comments, class: 'panel small' do |comment| %>
+<h5><%= comment.title %>
+  <%- if comment.user %>
+  by <%= comment.user.email %>
+  <%- end %>
+</h5>
+<%= simple_format comment.comment %>
+<% end %>
+
+<%= simple_form_for [@post, @comment] do |f| %>
+<%= f.input :title %>
+<%= f.input :comment %>
+<%= f.submit %>
+<% end %>
