@@ -25,6 +25,17 @@
       <ul class="title-area">
         <li class="name"><h1><%= link_to 'Blog', posts_path %></h1></li>
       </ul>
+      <section class="top-bar-section">
+        <ul class="right">
+          <li class="divider hide-for-small"></li>
+          <%- if user_signed_in? %>
+          <li><%= link_to "Log out from #{current_user.email}", destroy_user_session_path, method: :delete %></li>
+          <%- else %>
+          <li><%= link_to 'Log in', new_user_session_path %></li>
+          <li><%= link_to 'Sign up', new_user_registration_path %></li>
+          <%- end %>
+        </ul>
+      </section>
     </nav>
     <div class="row">
       <div class="large-8 large-offset-2 columns">
