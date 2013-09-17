@@ -3,7 +3,10 @@
 <%= div_for @posts, class: 'panel' do |post| %>
   <h5><%= link_to post.title, post %></h5>
   Created <%= time_ago_in_words post.created_at %> ago, updated
-  <%= time_ago_in_words post.updated_at %> ago
+  <%= time_ago_in_words post.updated_at %> ago.
+  <%- if post.user %>
+  Created by <%= post.user.email %>
+  <%- end %>
 <% end %>
 
 <%= link_to 'New Post', new_post_path, class: 'button' %>
