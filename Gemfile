@@ -26,6 +26,9 @@ gem 'turbolinks'
 gem 'zurb-foundation'
 gem 'compass-rails'
 gem 'simple_form'
+gem 'devise'
+gem 'foundation_rails_helper'
+
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
